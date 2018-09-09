@@ -91,6 +91,21 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias cl='clear'
+alias nv='nvim'
+alias vim='nvim'
+
+# aliases for Stack
+alias sb='stack build'
+alias sc='stack clean'
+alias si='stack install'
+
+# aliases for git
+alias gb='git branch'
+alias gd='git diff'
+alias gl='git log'
+alias gs='git status'
+alias ga='git add .'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -112,38 +127,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias ls='ls --color=auto'
-alias cl='clear'
-alias nv='nvim'
-alias vim='nvim'
-alias sb='stack build'
-alias si='stack install'
-alias sc='stack clean'
-alias st='stack test'
-
-alias gb='git branch'
-alias gs='git status'
-alias gd='git diff'
-alias ga='git add .'
-alias gl='git log'
-
 # For pretty look in TMUX
 export TERM="screen-256color"
+# export TERM="gnome-256color"
 
-export LD_LIBRARY_PATH=/home/denis/raspbian-sdk/sysroot/usr/lib/arm-linux-gnueabihf:/home/denis/raspbian-sdk/sysroot/lib/arm-linux-gnueabihf:$LD_LIBRARY_PATH
+# Where to install local stuff.
+PATH=$PATH:/home/shevchenko/.local/bin
 
-# For install local stuff.
-PATH=$PATH:/home/denis/.local/bin
-
-PATH=$PATH:/home/denis/Downloads/clang+llvm-6.0.0-x86_64-linux-gnu-debian8/clang+llvm-6.0.0-x86_64-linux-gnu-debian8/bin/
-#PATH=$PATH:/home/denis/raspbian/llvm/build/bin
-PATH=$PATH:/home/denis/raspbian/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/
-
-# Git commands autocompletion.
+# Bash completion for Git.
 source /etc/bash_completion.d/git-completion.bash
 
 # Bash completion for Haskell Stack.
 eval "$(stack --bash-completion-script stack)"
 
-# Simplest prompt in terminal.
+# Simplest prompt in the terminal.
 PS1='\w \$ '
