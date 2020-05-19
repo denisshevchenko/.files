@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/denis'
+let g:netrw_dirhist_2='/home/denis/Code'
+let g:netrw_dirhist_3='/home/denis/Code/cardano-sl'
+let g:netrw_dirhist_4='/home/denis/Code/cardano-sl/client'
+let g:netrw_dirhist_5='/home/denis/Code/cardano-sl'
+let g:netrw_dirhist_6='/home/denis/Code/cardano-sl/core'
+let g:netrw_dirhist_7='/home/denis/Code/cardano-sl/core/src'
+let g:netrw_dirhist_8='/home/denis/Code/cardano-sl/core/src/Pos'
+let g:netrw_dirhist_9='/home/denis/Code/cardano-sl/core/src/Pos/Core'
