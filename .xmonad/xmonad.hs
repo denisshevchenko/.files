@@ -177,6 +177,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_m), spawn "udisksctl mount -b /dev/sda1")
     , ((modm .|. shiftMask, xK_u), spawn "udisksctl unmount -b /dev/sda1")
     ]
+    ++
+
+    --
+    -- Screensaver, lock the screen
+    [((modm .|. shiftMask, xK_l), spawn "xscreensaver-command -lock")]
 
 mediaKeys :: [(String, X ())]
 mediaKeys = [ ("<XF86AudioLowerVolume>",  lowerVolume 10 >> return ())
