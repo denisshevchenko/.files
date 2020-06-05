@@ -1,7 +1,3 @@
--- http://projects.haskell.org/xmobar/
--- install xmobar with these flags: --flags="with_alsa" --flags="with_mpd" --flags="with_xft"  OR --flags="all_extensions"
--- you can find weather location codes here: http://weather.noaa.gov/index.html
-
 Config { font    = "xft:FiraCode Nerd Font Mono:pixelsize=16:antialias=true:hinting=true"
        , additionalFonts = [ "xft:FontAwesome:pixelsize=17" ]
        , bgColor = "#282A36"
@@ -19,11 +15,11 @@ Config { font    = "xft:FiraCode Nerd Font Mono:pixelsize=16:antialias=true:hint
                       -- Ram used number and percent
                     , Run Memory ["-t", "\xf233 <used>M (<usedratio>%)"] 20
                       -- Active keyboard layout.
-                    , Run Kbd [("us", "EN"), ("ru", "RU")]
+                    , Run Kbd [("us", "\xf0ac EN"), ("ru", "\xf0ac RU")]
                       -- Battery status.
                     , Run BatteryP ["BAT0"]
                                    [ "-t", "<acstatus>"
-                                   , "-L", "10", "-H", "80"
+                                   , "-L", "10", "-H", "70"
                                    , "-l", "red", "-h", "#19BA41"
                                    , "--", "-O", "\xf241 charging <left>%", "-o", "\xf241 <left>%"
                                    ] 10
@@ -32,5 +28,5 @@ Config { font    = "xft:FiraCode Nerd Font Mono:pixelsize=16:antialias=true:hint
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %UnsafeStdinReader% }{ <fc=#b3afc2>%kbd%</fc> <fc=#666666></fc> <fc=#b3afc2>%battery%</fc> <fc=#666666></fc> <fc=#FFB86C>%cpu%</fc> <fc=#666666></fc> <fc=#FF5555>%memory%</fc> <fc=#666666></fc> <fc=#8BE9FD>%date%</fc> "
+       , template = " %UnsafeStdinReader% }{ <fc=#fefefe>%kbd%</fc> <fc=#666666></fc> <fc=#b3afc2>%battery%</fc> <fc=#666666></fc> <fc=#FFB86C>%cpu%</fc> <fc=#666666></fc> <fc=#FF5555>%memory%</fc> <fc=#666666></fc> <fc=#8BE9FD>%date%</fc> "
        }
