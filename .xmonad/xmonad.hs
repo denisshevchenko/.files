@@ -60,7 +60,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["1:web","2:code","3:term","4:vifm","5:mail","6:kee","7:skype","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -79,7 +79,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
     -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    -- , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -285,8 +285,10 @@ myLogHook = return ()
 myStartupHook = return ()
 
 -- Wallpaper, the simplest solution: one fixed background picture for all workspaces.
-wallpapersImages = zip (map show [1..9])
-                       (map (const $ WallpaperFix "/home/denis/.wallpapers/haskell.png") [1..9])
+wallpapersImages = zip myWorkspaces
+                       ( map (const $ WallpaperFix "/home/denis/.wallpapers/haskell.png")
+                             [1 .. length myWorkspaces]
+                       )
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
