@@ -301,7 +301,7 @@ main = do
     dynamicLogWithPP xmobarPP
       { ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "" . wrap "[" "]"
       , ppTitle = xmobarColor xmobarTitleColor "" . shorten 50
-      , ppSep = "   "
+      , ppSep = "  \xe0b1  "
       , ppOutput = hPutStrLn xmobarProc
       }
     wallpaperSetter defWallpaperConf -- The simplest soluiton: one fixed background picture for all workspaces.
