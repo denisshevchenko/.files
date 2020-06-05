@@ -1,5 +1,5 @@
-Config { font    = "xft:FiraCode Nerd Font Mono:pixelsize=16:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:FontAwesome:pixelsize=17" ]
+Config { font    = "xft:FiraCode Nerd Font Mono:pixelsize=16"
+       , additionalFonts = [ "xft:FontAwesome:pixelsize=16" ]
        , bgColor = "#282A36"
        , fgColor = "#B45BCF"
        , position = Top
@@ -23,10 +23,14 @@ Config { font    = "xft:FiraCode Nerd Font Mono:pixelsize=16:antialias=true:hint
                                    , "-l", "red", "-h", "#19BA41"
                                    , "--", "-O", "\xf241 charging <left>%", "-o", "\xf241 <left>%"
                                    ] 10
+                      -- Volume level/status.
+                    , Run Volume "default" "Master" [ "-t", "\xf028 <volume>% <status>"
+                                                    , "--", "-O", "", "-o", "\xf026 "
+                                                    ] 5
                       -- Prints out the left side items such as workspaces, layout, etc.
                     , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %UnsafeStdinReader% }{ <fc=#fefefe>%kbd%</fc> <fc=#666666></fc> <fc=#b3afc2>%battery%</fc> <fc=#666666></fc> <fc=#FFB86C>%cpu%</fc> <fc=#666666></fc> <fc=#FF5555>%memory%</fc> <fc=#666666></fc> <fc=#8BE9FD>%date%</fc> "
+       , template = " %UnsafeStdinReader% }{ <fc=#fefefe>%kbd%</fc> <fc=#666666></fc> <fc=#6699cc>%default:Master%</fc><fc=#666666></fc> <fc=#b3afc2>%battery%</fc> <fc=#666666></fc> <fc=#FFB86C>%cpu%</fc> <fc=#666666></fc> <fc=#FF5555>%memory%</fc> <fc=#666666></fc> <fc=#8BE9FD>%date%</fc>"
        }
